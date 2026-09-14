@@ -87,17 +87,15 @@
             let aboutDOM = '';
 
             aboutDOM += `
-                <h5>Version</h5>
-                <p>${info.extras.about.version}<br></p>
-                <br>
                 <h5>License</h5>
                 <p>${info.extras.about.license}<br></p>
                 <br>
-                <h5>Techstack</h5>
-                <p>
+                <h5 style="margin-bottom: 10px;">Techstack</h5>
             `
 
-            info.extras.about.techstack.forEach(tech => { aboutDOM += `${tech} `});
+            info.extras.about.techstack.forEach(tech => { aboutDOM += `
+                <p class="tech">${tech} </p>`}
+            );
 
             document.getElementById('about').innerHTML = aboutDOM;
 
@@ -179,6 +177,16 @@
                     height: 30px;
 
                 }
+
+                .tech {
+                    background-color: #8dabc8;
+                    color: white;
+                    padding: 3px 10px 3px 10px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    display: inline-block;;
+                }
+                
             }
         }
     }
